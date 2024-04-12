@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import { FaCheck, FaTimes } from 'react-icons/fa';
 import { IoMdReturnRight } from 'react-icons/io';
 import '../styles.css';
 
 function TodoItem ({ index, todo, onEdit, onDelete }) {
     const [newTodo, setNewTodo] = useState(todo);
     const [isEditing, setIsEditing] = useState(false);
+    const [isCompleted, setIsCompleted] = useState(false);
 
     const handleEdit = () => {
         setNewTodo(todo);
@@ -21,6 +22,10 @@ function TodoItem ({ index, todo, onEdit, onDelete }) {
         setIsEditing(false);
     };
 
+    const toggleIsCompleted = () => {
+        setIsCompleted(!isCompleted);
+    };
+
     return (
         <div>
             {isEditing ? (
@@ -30,7 +35,13 @@ function TodoItem ({ index, todo, onEdit, onDelete }) {
                 </form>
             ) : (
                 <li className="todo-item">
-                    <div onClick={handleEdit} className="todo-text">{todo}</div>
+                    <div 
+                        onClick={handleEdit} 
+                        className={`todo-text ${isCompleted ? "todo-completed" : ""}`}
+                    >
+                        {todo}
+                    </div>
+                    <button onClick={toggleIsCompleted}><FaCheck className="button done-icon"/></button>
                     <button onClick={onDelete}><FaTimes className="button delete-icon"/></button>
                 </li>
             )}

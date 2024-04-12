@@ -9,35 +9,35 @@
 }
 
 .App {
+  max-width: 500px; /* Width of the box */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Padding between border and UI elements */
   border-style: dashed;
   border-color: var(--custom-medium-gray);
-  margin-left: 300px;
-  margin-right: 300px;
-  padding-bottom: 30px;
 }
 
 header {
-  text-align: center;
   color: var(--custom-blue);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bold;
   font-size: large;
-  padding-top: 20px;
-  padding-bottom: 0px;
 }
 
 /* Todo List */
 .todo-item {
-  display: flex;
-  align-items: center;
+  display: flex; /* Display todo elements side-by-side */
   justify-content: center;
-  padding: 5px;
+  padding: 5px; /* Spacing between each todo item (only care about the vertical spacing) */
 }
 
 .todo-text {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--custom-off-white);
-  margin-right: 10px;
+  margin-right: 10px; /* Spacing between todo text and buttons */
+}
+
+.todo-completed {
+  text-decoration: line-through;
 }
 
 /* Input Text Boxes */
@@ -46,7 +46,7 @@ input {
   background-color: var(--custom-medium-gray);
   color: var(--custom-off-white);
   font-family: 'Courier New', Courier, monospace;
-  margin-right: 10px;
+  margin-right: 10px; /* Spacing between input box and buttons */
 }
 
 input::placeholder {
@@ -55,7 +55,6 @@ input::placeholder {
 
 /* Button Icons */
 .button {
-  display: flex;
 }
 
 .add-icon {
@@ -67,5 +66,9 @@ input::placeholder {
 }
 
 .save-icon {
+  color: var(--custom-green);
+}
+
+.done-icon {
   color: var(--custom-green);
 }
