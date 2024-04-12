@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3>To-Do List</h3>
+      <header>To-Do List</header>
       <TodoList todos={todos} onEditTodo={editTodo} onDeleteTodo={deleteTodo}/>
       <TodoAdderForm onAddTodo={addTodo}/>
     </div>

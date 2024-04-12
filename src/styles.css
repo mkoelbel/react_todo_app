@@ -1,23 +1,71 @@
-.App {
-  text-align: center;
+/* Colors */
+:root {
+  --custom-blue: #9bb2d3;
+  --custom-green: #799c72;
+  --custom-red: #b95a5a;
+  --custom-off-white: #d8d8d8;
+  --custom-dark-white: #a29a99;
+  --custom-medium-gray: #606060;
 }
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
+.App {
+  border-style: dashed;
+  border-color: var(--custom-medium-gray);
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-bottom: 30px;
+}
 
+header {
+  text-align: center;
+  color: var(--custom-blue);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: large;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+/* Todo List */
 .todo-item {
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
 
 .todo-text {
-  flex: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--custom-off-white);
+  margin-right: 10px;
+}
+
+/* Input Text Boxes */
+input {
+  width: 250px;
+  background-color: var(--custom-medium-gray);
+  color: var(--custom-off-white);
+  font-family: 'Courier New', Courier, monospace;
+  margin-right: 10px;
+}
+
+input::placeholder {
+  color: var(--custom-dark-white);
+}
+
+/* Button Icons */
+.button {
+  display: flex;
+}
+
+.add-icon {
+  color: var(--custom-green);
+}
+
+.delete-icon {
+  color: var(--custom-red);
+}
+
+.save-icon {
+  color: var(--custom-green);
 }

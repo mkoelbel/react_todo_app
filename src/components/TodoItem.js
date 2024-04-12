@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaTimes } from 'react-icons/fa';
+import { IoMdReturnRight } from 'react-icons/io';
 import '../styles.css';
 
 function TodoItem ({ index, todo, onEdit, onDelete }) {
@@ -24,12 +26,12 @@ function TodoItem ({ index, todo, onEdit, onDelete }) {
             {isEditing ? (
                 <form onSubmit={handleSave}>
                     <input type="text" value={newTodo} onChange={handleChange}/>
-                    <button type="submit">Save</button>
+                    <button type="submit"><IoMdReturnRight className="button save-icon"/></button>
                 </form>
             ) : (
                 <li className="todo-item">
-                    <p className="todo-text" onClick={handleEdit}>{todo}</p>
-                    <button onClick={onDelete}>Delete</button>
+                    <div onClick={handleEdit} className="todo-text">{todo}</div>
+                    <button onClick={onDelete}><FaTimes className="button delete-icon"/></button>
                 </li>
             )}
         </div>

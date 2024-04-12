@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaPlus } from "react-icons/fa";
 
 function TodoAdderForm({ onAddTodo }) {
     const [todoText, setTodoText] = useState("");
@@ -15,8 +16,13 @@ function TodoAdderForm({ onAddTodo }) {
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" value={todoText} onChange={handleChange}/>
-            <button type="submit">Add Task</button>
+            <input 
+                type="text" 
+                value={todoText} 
+                placeholder="make the world a better place"
+                onChange={handleChange} 
+            />
+            <button type="submit"><FaPlus className="button add-icon"/></button>
         </form>
     );
 };
