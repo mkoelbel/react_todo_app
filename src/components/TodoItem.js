@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 
 function TodoItem ({ index, todo, onEdit, onDelete }) {
-    const [todoText, setTodoText] = useState(todo);
+    const [newTodo, setNewTodo] = useState(todo);
     const [isEditing, setIsEditing] = useState(false);
 
-    const handleEdit = () => {
+    const handleEdit = (originalTodo) => {
+        setNewTodo(originalTodo);
         setIsEditing(true);
     };
 
     const handleChange = (event) => {
-        setTodoText(event.target.value)
+        setNewTodo(event.target.value);
     };
 
     const handleSave = () => {  
-        onEdit(index, todoText);
+        onEdit(index, newTodo);
         setIsEditing(false);
     };
 
@@ -21,13 +22,13 @@ function TodoItem ({ index, todo, onEdit, onDelete }) {
         <div>
             {isEditing ? (
                 <form onSubmit={handleSave}>
-                    <input type="text" value={todoText} onChange={handleChange}/>
+                    <input type="text" value={newTodo} onChange={handleChange}/>
                     <button type="submit">Save</button>
                 </form>
             ) : (
                 <li>
                     {todo}
-                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={() => handleEdit(todo)}>Edit</button>
                     <button onClick={onDelete}>Delete</button>
                 </li>
             )}

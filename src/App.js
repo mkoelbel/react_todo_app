@@ -7,7 +7,6 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const editTodo = (index, newTodo) => {
-    console.log(`App.js - index: ${index} and newTodo: ${newTodo}`)
     const updatedTodos = [...todos];
     updatedTodos[index] = newTodo;
     setTodos(updatedTodos);
