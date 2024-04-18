@@ -6,7 +6,12 @@ function TodoAdderForm({ onAddTodo }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        onAddTodo(todoText);
+        const todoToAdd = {
+            text: todoText, 
+            editing: false,
+            completed: false 
+        }
+        onAddTodo(todoToAdd);
         setTodoText("");
     };
 

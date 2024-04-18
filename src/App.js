@@ -14,6 +14,7 @@ function App() {
 
   const deleteTodo = (index) => {
     const updatedTodos = [...todos];
+    updatedTodos.forEach(todo => todo.editing = false);
     updatedTodos.splice(index, 1);
     setTodos(updatedTodos);
   };
@@ -25,7 +26,11 @@ function App() {
   return (
     <div className="App">
       <header>To-Do List</header>
-      <TodoList todos={todos} onEditTodo={editTodo} onDeleteTodo={deleteTodo}/>
+      <TodoList 
+        todos={todos} 
+        onEditTodo={editTodo} 
+        onDeleteTodo={deleteTodo}
+      />
       <TodoAdderForm onAddTodo={addTodo}/>
     </div>
   );
